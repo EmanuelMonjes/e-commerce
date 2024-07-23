@@ -47,7 +47,6 @@ router.post('/', (req, res) => {
     const { title, description, code, price, status, stock, category, thumbnails } = req.body;
 
     if (!title || !description || !code || typeof price !== 'number' || typeof status !== 'boolean' || typeof stock !== 'number' || !category || !Array.isArray(thumbnails)) {
-        console.log('Request Body:', req.body); // Agregar log para ver el cuerpo de la solicitud
         return res.status(400).json({ error: 'Missing required fields or incorrect data format' });
     }
 
