@@ -1,13 +1,3 @@
 [
-    {
-        "id": 1,
-        "title": "Nuevo Producto",
-        "description": "Descripción del nuevo producto",
-        "code": "NP001",
-        "price": 100.50,
-        "status": true,
-        "stock": 20,
-        "category": "Categoría 1",
-        "thumbnails": ["ruta/a/imagen1.jpg", "ruta/a/imagen2.jpg"]
-    }
+  
 ]

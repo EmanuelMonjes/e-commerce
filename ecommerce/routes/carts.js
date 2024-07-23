@@ -2,10 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 
-const filePath = './data/carts.json';
+const filePath = './data/products.json';
+const cartFilePath = './data/carts.json';
 
-// Función para leer los carritos desde el archivo
-const getCarts = () => {
+// Función para leer los productos desde el archivo
+const getProducts = () => {
     if (fs.existsSync(filePath)) {
         const data = fs.readFileSync(filePath);
         return JSON.parse(data);
@@ -13,13 +14,22 @@ const getCarts = () => {
     return [];
 };
 
+// Función para leer los carritos desde el archivo
+const getCarts = () => {
+    if (fs.existsSync(cartFilePath)) {
+        const data = fs.readFileSync(cartFilePath);
+        return JSON.parse(data);
+    }
+    return [];
+};
+
 // Función para escribir los carritos al archivo
 const saveCarts = (carts) => {
-    fs.writeFileSync(filePath, JSON.stringify(carts, null, 2));
+    fs.writeFileSync(cartFilePath, JSON.stringify(carts, null, 2));
 };
 
 // Generar un nuevo ID para el carrito
-const generateId = (carts) => {
+const generateCartId = (carts) => {
     const ids = carts.map(cart => cart.id);
     return ids.length > 0 ? Math.max(...ids) + 1 : 1;
 };
@@ -28,7 +38,7 @@ const generateId = (carts) => {
 router.post('/', (req, res) => {
     const carts = getCarts();
     const newCart = {
-        id: generateId(carts),
+        id: generateCartId(carts),
         products: []
     };
 
@@ -38,7 +48,7 @@ router.post('/', (req, res) => {
     res.status(201).json(newCart);
 });
 
-// Ruta GET /:cid (Listar productos en el carrito por ID de carrito)
+// Ruta GET /:cid (Listar productos del carrito por ID)
 router.get('/:cid', (req, res) => {
     const carts = getCarts();
     const cart = carts.find(c => c.id == req.params.cid);
@@ -52,6 +62,13 @@ router.get('/:cid', (req, res) => {
 
 // Ruta POST /:cid/product/:pid (Agregar producto al carrito)
 router.post('/:cid/product/:pid', (req, res) => {
+    const products = getProducts();
+    const product = products.find(p => p.id == req.params.pid);
+
+    if (!product) {
+        return res.status(404).json({ error: 'Product not found' });
+    }
+
     const carts = getCarts();
     const cart = carts.find(c => c.id == req.params.cid);
 
@@ -59,16 +76,16 @@ router.post('/:cid/product/:pid', (req, res) => {
         return res.status(404).json({ error: 'Cart not found' });
     }
 
-    const productIndex = cart.products.findIndex(p => p.product == req.params.pid);
+    const productInCart = cart.products.find(p => p.product == req.params.pid);
 
-    if (productIndex !== -1) {
-        cart.products[productIndex].quantity += 1;
+    if (productInCart) {
+        productInCart.quantity += 1;
     } else {
         cart.products.push({ product: req.params.pid, quantity: 1 });
     }
 
     saveCarts(carts);
-    res.json(cart);
+    res.status(201).json(cart);
 });
 
 module.exports = router;
