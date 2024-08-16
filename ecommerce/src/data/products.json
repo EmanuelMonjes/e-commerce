@@ -1,0 +1,73 @@
+[
+    {
+        "id": "1721593217868-74459",
+        "title": "Laptop Dell XPS 13",
+        "description": "Laptop Dell XPS 13 con procesador Intel i7, 16GB de RAM, 512GB SSD y pantalla táctil de 13.3 pulgadas.",
+        "code": "LAPTOPDELL2024",
+        "price": 1099.99,
+        "status": true,
+        "stock": 25,
+        "category": "Computadoras",
+        "thumbnails": [
+          "https://loremflickr.com/320/240/dell-xps",
+          "http://example.com/images/dell_xps_back.jpg"
+        ]
+    },
+    {
+        "id": "1721593217868-74460",
+        "title": "Auriculares Sony WH-1000XM5",
+        "description": "Auriculares inalámbricos Sony WH-1000XM5 con cancelación de ruido activa y hasta 30 horas de batería.",
+        "code": "SONYHEAD2024",
+        "price": 349.99,
+        "status": true,
+        "stock": 40,
+        "category": "Audio",
+        "thumbnails": [
+          "https://loremflickr.com/320/240/sony-headphones",
+          "http://example.com/images/sony_wh1000xm5_side.jpg"
+        ]
+    },
+    {
+        "id": "1721593217868-74461",
+        "title": "Televisor LG OLED55C1",
+        "description": "Televisor LG OLED de 55 pulgadas, resolución 4K UHD, con soporte HDR10 y Dolby Vision.",
+        "code": "LGOLED2024",
+        "price": 1299.99,
+        "status": true,
+        "stock": 15,
+        "category": "Electrónica",
+        "thumbnails": [
+          "https://loremflickr.com/320/240/lg-oled",
+          "http://example.com/images/lg_oled55c1_back.jpg"
+        ]
+    },
+    {
+        "id": "1721593217868-74462",
+        "title": "Cámara Canon EOS R6",
+        "description": "Cámara sin espejo Canon EOS R6 con sensor de 20MP, grabación en 4K y estabilización de imagen integrada.",
+        "code": "CANONEOS2024",
+        "price": 2499.99,
+        "status": true,
+        "stock": 10,
+        "category": "Fotografía",
+        "thumbnails": [
+          "https://loremflickr.com/320/240/canon-camera",
+          "http://example.com/images/canon_eosr6_front.jpg"
+        ]
+    },
+    {
+        "id": "1721593217868-74463",
+        "title": "Tablet Apple iPad Air",
+        "description": "Apple iPad Air de 10.9 pulgadas, con chip M1, 256GB de almacenamiento, y compatibilidad con Apple Pencil.",
+        "code": "IPADAIR2024",
+        "price": 599.99,
+        "status": true,
+        "stock": 30,
+        "category": "Tabletas",
+        "thumbnails": [
+          "https://loremflickr.com/320/240/ipad-air",
+          "http://example.com/images/ipad_air_back.jpg"
+        ]
+    }
+                
+]

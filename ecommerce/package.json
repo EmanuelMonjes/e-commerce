@@ -1,13 +1,17 @@
 {
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0"
   },
   "name": "ecommerce",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
