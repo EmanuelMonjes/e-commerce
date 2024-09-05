@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Express API</title>
 </head>
 <body>
-    <h1>Products</h1>
+    <h1>Express API</h1>
+    <h3>Loading Cart ID...</h3>
+    <div id="pagination-container"></div>
     <div id="products-container" class="products-container"></div>
+    <br>
+    <form id="add-product-form">
+      <input type="text" id="product-title" placeholder="Product Name" required>
+      <input type="text" id="product-description" placeholder="Description" required>
+      <input type="text" id="product-code" placeholder="Product Code" required>
+      <input type="number" id="product-price" placeholder="Price" step="0.01" required>
+      <input type="number" id="product-stock" placeholder="Stock" required>
+      <input type="text" id="product-category" placeholder="Category" required>
+      <input type="text" id="product-thumbnail" placeholder="Image URL (Optional)">
+      <button type="submit">Add Product</button>
+    </form>
     
     <script src="/js/fetchProducts.js"></script>
 </body>
